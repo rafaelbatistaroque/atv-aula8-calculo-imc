@@ -20,16 +20,21 @@
                 </tr>
             </thead>
             <hr />
-            <tbody>
-                <tr>
-                    <td ng-bind='pessoa.peso'></td>
-                    <td ng-bind='pessoa.altura'></td>
-                    <td ng-bind='pessoa.resultado'></td>
-                    <td><button class="btn btn-danger" ng-click='calcularImc(pessoa)'><span
-                                class="oi oi-trash"></span></button></td>
-                </tr>
-            </tbody>
+            <form name='calculoImcForm'>
+                <tbody>
+                    <tr>
+                        <td><input type="text" class="form-control" ng-model='pessoa.peso' placeholder="Seu peso"
+                                ng-required="true"></td>
+                        <td><input type="text" class="form-control" ng-model='pessoa.altura' placeholder="Sua altura"
+                                ng-required='true'></td>
+                        <td ng-bind='pessoa.resultado'></td>
+                    </tr>
+                </tbody>
+            </form>
         </table>
+        <button class="btn btn-primary btn-block" ng-click='calcularIMC(pessoa)'
+            ng-disabled="calculoImcForm.$invalid">Calcular IMC</button>
 </body>
+<script src="./lib/angular/angular.js"></script>
 
 </html>
