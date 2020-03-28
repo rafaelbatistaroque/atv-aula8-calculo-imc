@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./lib/css/style.css">
+    <title>Tabela IMC</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1 ng-bind='titulo'></h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
+                </tr>
+            </thead>
+            <hr />
+            <tbody>
+                <tr>
+                    <td ng-bind='pessoa.peso'></td>
+                    <td ng-bind='pessoa.altura'></td>
+                    <td ng-bind='pessoa.resultado'></td>
+                    <td><button class="btn btn-danger" ng-click='calcularImc(pessoa)'><span
+                                class="oi oi-trash"></span></button></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+
+</html>
