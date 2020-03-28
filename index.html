@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html ng-app="calculoImc">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Tabela IMC</title>
 </head>
 
-<body>
+<body ng-controller="calculoImcController">
     <div class="jumbotron text-center">
         <h1 ng-bind='titulo'></h1>
         <table class="table">
@@ -27,14 +27,15 @@
                                 ng-required="true"></td>
                         <td><input type="text" class="form-control" ng-model='pessoa.altura' placeholder="Sua altura"
                                 ng-required='true'></td>
-                        <td ng-bind='pessoa.resultado'></td>
+                        <td ng-bind='resultado'></td>
                     </tr>
                 </tbody>
             </form>
         </table>
-        <button class="btn btn-primary btn-block" ng-click='calcularIMC(pessoa)'
+        <button class="btn btn-primary btn-block" ng-click='calcularImc(pessoa)'
             ng-disabled="calculoImcForm.$invalid">Calcular IMC</button>
 </body>
 <script src="./lib/angular/angular.js"></script>
+<script src="./lib/script/app/app-calculo-imc.js"></script>
 
 </html>
